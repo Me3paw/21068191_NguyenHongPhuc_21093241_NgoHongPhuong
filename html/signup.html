@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<title>Cửa hàng kính</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.4.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+	<script>
+		function checkPasswordMatch() {
+		  var password = document.getElementById("password").value;
+		  var confirmPassword = document.getElementById("confirmPassword").value;
+  
+		  if (password != confirmPassword) {
+			document.getElementById("passwordError").innerHTML = "Passwords do not match!";
+		  } else {
+			document.getElementById("passwordError").innerHTML = "";
+		  }
+		}
+  
+		function checkEmailFormat() {
+		  var email = document.getElementById("email").value;
+		  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+		  if (!emailRegex.test(email)) {
+			document.getElementById("emailError").innerHTML = "Please enter a valid email address!";
+		  } else {
+			document.getElementById("emailError").innerHTML = "";
+		  }
+		}
+	  </script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+            font-style: bold;
+		}
+		h1 {
+			margin: 0;
+			font-size: 36px;
+			font-weight: normal;
+		}
+		nav {
+			background-color: #666;
+			color: #fff;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px 20px;
+		}
+		nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			display: flex;
+		}
+		nav ul li {
+			margin-left: 10px;
+		}
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			display: block;
+			border-radius: 5px;
+			transition: background-color 0.2s ease-in-out;
+		}
+		nav a:hover {
+			background-color: #999;
+		}
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.item {
+			max-width: 300px;
+			margin-bottom: 20px;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+			border-radius: 5px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		.item img {
+			max-width: 100%;
+			margin-bottom: 20px;
+		}
+		.item h2 {
+			margin: 0;
+			font-size: 24px;
+			font-weight: normal;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.item a {
+			margin: 0;
+			font-size: 24px;
+			font-weight: normal;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.item p {
+			margin: 0;
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.item button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.2s ease-in-out;
+		}
+		.item button:hover {
+			background-color: #999;
+		}
+		footer {
+			background-color: #666;
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>CỬA HÀNH KÍNH PHÚC PHƯƠNG</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home.html" class="nav-link"> Trang chủ</a></li>
+			<li><a href="kinhram.html" class="nav-link"> Kính râm</a></li>
+			<li><a href="kinhcan.html" class="nav-link"> Kính cận</a></li>
+			<li><a href="sale.html" class="nav-link"> Sale</a></li>
+			<li><a href="lienhe.html" class="nav-link"> Liên hệ</a></li>
+			<li><a href="login.html">Đăng nhập</a></li>
+			<li><a href="signup.html">Đăng kí</a></li>
+		</ul>
+		<form>
+			<input type="text" placeholder="Search...">
+			<button>Search</button>
+		</form>
+	</nav>
+	<div class="container">
+	<h2>Sign Up</h2>
+	<form action="#" method="post">
+		<div>
+			<label for="firstName">Họ:</label>
+			<input type="text" id="firstName" name="firstName" required>
+		</div>	
+		<div>
+			<label for="lastName">Tên:</label>
+			<input type="text" id="lastName" name="lastName" required>
+		</div>	
+		<div>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required onblur="checkEmailFormat()"><span id="emailError"></span>
+		</div>
+		<div>
+			<label for="password">Mật khẩu:</label>
+			<input type="password" id="password" name="password" required>
+		</div>
+		<div>
+			<label for="confirmPassword">Xác nhận mật khẩu:</label>
+			<input type="password" id="confirmPassword" name="confirmPassword" required onblur="checkPasswordMatch()"><span id="passwordError"></span>
+		</div>
+		<button type="submit">Đăng kí</button>
+	</form>
+	<p>Đã có tài khoản ?<a href="login.html">Đăng nhập tại đây</a>.</p>
+    </div>
+	<footer>
+		<p>&copy; NgôHồngPhương-NguyễnHồngPhúc</p>
+	</footer>
+</body>
+</html>
