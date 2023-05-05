@@ -14,7 +14,7 @@
 		  var confirmPassword = document.getElementById("confirmPassword").value;
   
 		  if (password != confirmPassword) {
-			document.getElementById("passwordError").innerHTML = "Passwords do not match!";
+			document.getElementById("passwordError").innerHTML = "Mật khẩu không đúng!";
 		  } else {
 			document.getElementById("passwordError").innerHTML = "";
 		  }
@@ -25,7 +25,7 @@
 		  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   
 		  if (!emailRegex.test(email)) {
-			document.getElementById("emailError").innerHTML = "Please enter a valid email address!";
+			document.getElementById("emailError").innerHTML = "Nhập một địa chỉ email hợp lệ!";
 		  } else {
 			document.getElementById("emailError").innerHTML = "";
 		  }
